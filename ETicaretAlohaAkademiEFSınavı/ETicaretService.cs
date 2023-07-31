@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace ETicaretAlohaAkademiEFSınavı
 {
-    public class ETicaretService
-    {
-        public class ETicaretServis
+   public class ETicaretServis
         {
             private readonly EticaretContext _context;
 
@@ -139,40 +137,7 @@ namespace ETicaretAlohaAkademiEFSınavı
                 }
             }
 
-            public void OrderByProduct() // LINQ sorguları
-            {
-                var products = _context.products.ToList();
-
-                ////Fiyatı 2000 den büyük ürünler
-                var result = products.Where(p => p.Price > 2000);
-                foreach (var product in result)
-                {
-                    Console.WriteLine($"Ürün adı: {product.ProductName} fiyatı: {product.Price}");
-                }
-
-                //Fiyatı küçükten büyüğe sıralama
-
-                var result2 = products.OrderBy(p => p.Price).ToList();
-                foreach (var product in result2)
-                {
-                    Console.WriteLine($"ürün adı: {product.ProductName} fiyatı: {product.Price}");
-                }
-
-                //2000 tl fiyatı olan ürün var mı? True or False dönecek
-
-                var result3 = products.Any(p => p.Price == 2000);
-                Console.WriteLine(result3);
-
-                //Fiyatı 3000-30000 arasındaki ürünler
-
-                var result4 = products.Where(p => p.Price >= 3000 && p.Price <= 30000);
-
-                foreach (var product in result4)
-                {
-                    Console.WriteLine($"Ürün adı: {product.ProductName} fiyatı: {product.Price}");
-                }
-
-            }
+           
         }
-    }
+    
 }
