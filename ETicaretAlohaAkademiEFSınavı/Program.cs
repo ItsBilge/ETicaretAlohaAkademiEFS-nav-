@@ -14,7 +14,7 @@ namespace ETicaretAlohaAkademiEFSınavı
             //eticaret.DeleteCostumer();
             //eticaret.UpdateCostumer();
             //eticaret.GetCostumer();
-            eticaret.GetProduct();
+            //eticaret.GetProduct();
 
             /////LINQ Sorduları
 
@@ -48,7 +48,22 @@ namespace ETicaretAlohaAkademiEFSınavı
             //    Console.WriteLine($"Ürün adı: {product.ProductName} fiyatı: {product.Price}");
             //}
 
-            
+            //Ürünleri isimlerine göre sıralama
+            var productList = products.OrderBy(p => p.ProductName).ToList();
+
+            //foreach ( var product in productList )
+            //{
+            //    Console.WriteLine(product.ProductName);
+            //}
+
+            var product2 = products.Take(5).ToList();
+
+            Console.WriteLine("-----Product tablosundaki ilk 5 product----");
+            foreach ( var item in product2)
+            {
+                Console.WriteLine(item.ProductName);
+
+            }
         }
     }
 }
