@@ -63,7 +63,6 @@ namespace ETicaretAlohaAkademiEFSınavı
 
             }
 
-
             public void DeleteCostumer() // Kullanıcının girdiği ıd ye göre tablodan costumer silme
             {
                 try
@@ -137,6 +136,26 @@ namespace ETicaretAlohaAkademiEFSınavı
                 }
             }
 
+            public void GetCostumer() // Veri tabanından müşterileri getirme
+            {
+                var costumers = _context.Costumers.ToList();
+
+                foreach (var costumer in costumers)
+                {
+                Console.WriteLine($"Müşteri ID: {costumer.Id} \nMüşteri adı: {costumer.FirstName} {costumer.LastName} \nE-mail adres: {costumer.Email} \nTelefon no: {costumer.PhoneNumber} \nGönderi adresi: {costumer.ShippingAdress} \nFatura adresi: {costumer.BilingAdress}");
+                }
+
+            }
+
+            public void GetProduct() // Veri tabanındaki ürünleri getirme
+            {
+                var products = _context.products.ToList();
+
+                foreach (var product in products)
+                {
+                    Console.WriteLine($"Ürün ID : {product.Id} Ürün adı: {product.ProductName} \nÜrün açıklaması: {product.Description} \nÜrün fiyatı: {product.Price} \nÜrün markası {product.Brand}");
+                }
+            }
            
         }
     
